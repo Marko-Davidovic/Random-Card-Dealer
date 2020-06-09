@@ -7,7 +7,11 @@ import "../assets/img/4geeks.ico";
 import "../style/index.scss";
 
 window.onload = function() {
-  document.querySelector(".card").classList.add(generateRandomSuit());
+  let card = generateRandomSuit();
+  document.querySelector(".card").classList.add(card);
+
+  if (card === "heart" || card === "diamond")
+    document.querySelector(".card").classList.add("text-danger");
   document.querySelector(".card").innerHTML = generateRandomNumber();
 };
 
